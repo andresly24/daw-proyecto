@@ -1,11 +1,17 @@
-<p>contactos works!</p>
-
-
-<!-- 
-https://www.instagram.com/bobagrillquevedo/ 
-https://www.tiktok.com/@boba.and.grill
-https://www.google.com/maps/?cid=9844387752097128413 (Google Maps)
-097 986 7318 (Telf)
-
-Infomacion de Contacto  
--->
+<div class="col-sm-4 offset-md-1 py-4">
+    <h2 class="text-black">{{titulo}}</h2>
+        <ul class="list-unstyled">
+                @for (item of items; track item)
+                {<li>
+                    <a [href]="item.link" target="_blank">
+                        <img [src]="item.imageUrl" alt="{{ item.name }}" width="50">
+                        <span>{{ item.name }}</span>
+                      </a>
+                </li>
+                } @empty {
+                    Empty list of media
+                }
+        </ul>
+    <h2 class="text-black">Nos ubicamos en:</h2> 
+    <app-mapa></app-mapa>
+</div>
