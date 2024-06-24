@@ -1,25 +1,38 @@
 
-
-  <div class="container">
+<div class="container">
     <div class="row">
         <div class="col-lg-9">
             <div class="card mb-4" id="pedido">
                 <form>
                     <label for="item" class="form-label">Comida</label>
-                    <input type="text" class="form-control" id="item">
+                      <input type="text" class="form-control" id="item">
                     <p> </p>
-                    <button class="btn btn-primary">Submit</button> <br>
+                      <button class="btn btn-primary">Submit</button> <br>
                     <p> </p>
-                    <label class="form-label"> <b> Menu de Comida </b> </label> <br>
-                    <label class="form-control">
-
-                      {{ listaService.listaStr }}
-                      
-                    </label>
+                      <label class="form-label" > <b> Menu de Comida </b> </label> <br>
                     
-                  </form>
-                </div>          
+                      @for (listaJ of listaService.listaJson; track listaJ.id) {
+                        <div id="menu-comida">
+                          <label class="form-control">
+                            <p id="menu-comida"> 
+                              <img [src]="listaJ.img" width="80px" height="80px"> <br>
+                              {{ listaJ.nombre }} <br> 
+                              ${{ listaJ.precio }}
+
+                            </p>
+                          </label>
+                        </div>
+                      } 
+                    
+                          <!-- {{ listaService.listaStr }}   -->
+             
+                  </form> 
             </div>
+        </div>
     </div>
-  </div>
+</div>
+  
+
+
+  
 
